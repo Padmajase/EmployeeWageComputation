@@ -1,6 +1,6 @@
 import java.util.Random;
 
-class UC3 {
+class UC4 {
 
 	static int wagePerHr = 20;
 	static int fullTimeHr = 8;
@@ -12,25 +12,32 @@ class UC3 {
 
 	Random rand = new Random();
 	int isEmployee = rand.nextInt(3);	
-	//System.out.println(isEmployee);
-
-	if(isEmployee == 1)
-	{
-		System.out.println("Employee is full time Present");
-		System.out.println("Daily full time Employee Wage = " +(wagePerHr * fullTimeHr));
+	System.out.println(isEmployee);
+	
+		switch (isEmployee) {
+		case 1 :
+		{
+			System.out.println("Employee is full time Present");
+			System.out.println("Daily full time Employee Wage = " +(wagePerHr * fullTimeHr));
 		
-	}
-	else if(isEmployee == 2)
-	{
-		System.out.println("Employee is part time Present");
-		System.out.println("Daily part time Employee Wage = " +(wagePerHr * partTimeHr));
-		
-	}
-	else
-	{
-		System.out.println("Employee is Absent");
-		System.out.println("Daily Employee Wage = 0 " );
-	}
+		}
+		break;
+		case 2 :
+		{
+			System.out.println("Employee is part time Present");
+			System.out.println("Daily part time Employee Wage = " +(wagePerHr * partTimeHr));
+		}	
+		break;
+		case 0 :
+		{
+			System.out.println("Employee is Absent");
+			System.out.println("Daily Employee Wage = 0 " );
+		}
+		break;
+		default :
+			System.out.println("Invalid");
+		break;
 
+		}
 	}
 }
